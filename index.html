@@ -21,6 +21,8 @@
       --max:1200px;
       --radius:26px;
       --shadow:0 22px 60px rgba(0,0,0,0.35);
+      --danger:#ff8c8c;
+      --success:#9fd5a6;
     }
 
     *{box-sizing:border-box}
@@ -37,8 +39,6 @@
     }
 
     a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-
     .container{
       width:min(var(--max), calc(100% - 28px));
       margin:0 auto;
@@ -102,6 +102,7 @@
       cursor:pointer;
       border:1px solid transparent;
       text-align:center;
+      font-size:15px;
     }
 
     .btn-primary{
@@ -113,6 +114,13 @@
     .btn-primary:hover{
       transform:translateY(-1px);
       box-shadow:0 16px 34px rgba(216,179,106,0.28);
+    }
+
+    .btn-primary:disabled{
+      opacity:0.7;
+      cursor:not-allowed;
+      transform:none;
+      box-shadow:none;
     }
 
     .btn-secondary{
@@ -389,7 +397,7 @@
       gap:12px;
     }
 
-    input, textarea{
+    input, textarea, select{
       width:100%;
       padding:15px 16px;
       border-radius:16px;
@@ -404,15 +412,50 @@
       color:#92a0ae;
     }
 
-    input:focus, textarea:focus{
+    input:focus, textarea:focus, select:focus{
       border-color:rgba(216,179,106,0.55);
       box-shadow:0 0 0 3px rgba(216,179,106,0.12);
+    }
+
+    select{
+      appearance:none;
+      -webkit-appearance:none;
+      -moz-appearance:none;
+      background-image:
+        linear-gradient(45deg, transparent 50%, #d8b36a 50%),
+        linear-gradient(135deg, #d8b36a 50%, transparent 50%);
+      background-position:
+        calc(100% - 20px) calc(50% - 3px),
+        calc(100% - 14px) calc(50% - 3px);
+      background-size:6px 6px, 6px 6px;
+      background-repeat:no-repeat;
+      padding-right:44px;
+    }
+
+    select option{
+      background:#0f1d2b;
+      color:#ffffff;
     }
 
     .fine{
       color:var(--soft);
       font-size:14px;
       margin-top:12px;
+    }
+
+    .status-message{
+      display:none;
+      margin-top:10px;
+      font-size:14px;
+      border-radius:14px;
+      padding:12px 14px;
+    }
+
+    .status-message.error{
+      display:block;
+      background:rgba(255,140,140,0.10);
+      border:1px solid rgba(255,140,140,0.25);
+      color:#ffd0d0;
     }
 
     .final-cta{
@@ -465,38 +508,6 @@
       .hero-left,.panel,.card,.quote,.final-cta{padding:22px}
       .topbar-inner{padding:14px 0}
     }
-    
-    .form-select{
-  width:100%;
-  padding:15px 16px;
-  border-radius:16px;
-  border:1px solid rgba(255,255,255,0.10);
-  background:rgba(255,255,255,0.04);
-  color:#ffffff;
-  font-size:16px;
-  outline:none;
-  appearance:none;
-  -webkit-appearance:none;
-  -moz-appearance:none;
-  background-image:
-    linear-gradient(45deg, transparent 50%, #d8b36a 50%),
-    linear-gradient(135deg, #d8b36a 50%, transparent 50%);
-  background-position:
-    calc(100% - 20px) calc(50% - 3px),
-    calc(100% - 14px) calc(50% - 3px);
-  background-size:6px 6px, 6px 6px;
-  background-repeat:no-repeat;
-}
-
-.form-select:focus{
-  border-color:rgba(216,179,106,0.55);
-  box-shadow:0 0 0 3px rgba(216,179,106,0.12);
-}
-
-.form-select option{
-  background:#0f1d2b;
-  color:#ffffff;
-}
   </style>
 </head>
 <body>
@@ -705,7 +716,7 @@
         <div class="kicker">Founding access</div>
         <h2>Join the first disciplined intake.</h2>
         <p style="font-size:18px;color:#b8c4d1;max-width:720px;">
-          Enter your name and email to join the founding waitlist and receive updates,
+          Enter your details to join the founding waitlist and receive updates,
           early access, and launch information.
         </p>
 
@@ -726,78 +737,73 @@
         <div class="price">Free</div>
         <div class="muted">Founding waitlist access</div>
 
-<form action="https://formspree.io/f/xqeywnpe" method="POST">
-  <input type="text" name="name" placeholder="Your name" required>
-  <input type="email" name="email" placeholder="Your email" required>
+        <form id="waitlist-form" action="https://formspree.io/f/xqeywnpe" method="POST">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
 
-  <!-- 🌍 COUNTRY (REQUIRED) -->
-   <select name="country" required class="form-select">
-    style="width:100%; padding:15px; border-radius:16px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.04); color:white; font-size:16px;">
-    <option value="">Select your country</option>
-    <option>Albania</option>
-    <option>Argentina</option>
-    <option>Australia</option>
-    <option>Austria</option>
-    <option>Belgium</option>
-    <option>Brazil</option>
-    <option>Canada</option>
-    <option>Chile</option>
-    <option>China</option>
-    <option>Croatia</option>
-    <option>Denmark</option>
-    <option>Egypt</option>
-    <option>Finland</option>
-    <option>France</option>
-    <option>Germany</option>
-    <option>Hungary</option>
-    <option>Italy</option>
-    <option>Israel</option>
-    <option>India</option>
-    <option>Iraq</option>
-    <option>Mexico</option>
-    <option>Netherlands</option>
-    <option>Nigeria</option>
-    <option>Norway</option>
-    <option>Oman</option>
-    <option>Pakistan</option>
-    <option>Philipines</option>
-    <option>Poland</option>
-    <option>Romania</option>
-    <option>Russia</option>
-    <option>Serbia</option>
-    <option>Slovakia</option>
-    <option>Slovenia</option>
-    <option>South Africa</option>
-    <option>South Korea</option>
-    <option>Spain</option>
-    <option>Sweden</option>
-    <option>Thailand</option>
-    <option>Ukraine</option>
-    <option>United Arab Emirates</option>
-    <option>United Kingdom</option>
-    <option>United States</option>
-    <option>Other</option>
-  </select>
+          <select name="country" required>
+            <option value="">Select your country</option>
+            <option>Albania</option>
+            <option>Argentina</option>
+            <option>Australia</option>
+            <option>Austria</option>
+            <option>Belgium</option>
+            <option>Brazil</option>
+            <option>Canada</option>
+            <option>Chile</option>
+            <option>China</option>
+            <option>Croatia</option>
+            <option>Denmark</option>
+            <option>Egypt</option>
+            <option>Finland</option>
+            <option>France</option>
+            <option>Germany</option>
+            <option>Hungary</option>
+            <option>Italy</option>
+            <option>Israel</option>
+            <option>India</option>
+            <option>Iraq</option>
+            <option>Mexico</option>
+            <option>Netherlands</option>
+            <option>Nigeria</option>
+            <option>Norway</option>
+            <option>Oman</option>
+            <option>Pakistan</option>
+            <option>Philippines</option>
+            <option>Poland</option>
+            <option>Romania</option>
+            <option>Russia</option>
+            <option>Serbia</option>
+            <option>Slovakia</option>
+            <option>Slovenia</option>
+            <option>South Africa</option>
+            <option>South Korea</option>
+            <option>Spain</option>
+            <option>Sweden</option>
+            <option>Thailand</option>
+            <option>Ukraine</option>
+            <option>United Arab Emirates</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>Other</option>
+          </select>
 
-  <!-- 👤 GENDER (OPTIONAL) -->
-  <select name="gender" class="form-select">
-    style="width:100%; padding:15px; border-radius:16px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.04); color:white; font-size:16px;">
-    <option value="">Gender (optional)</option>
-    <option>Male</option>
-    <option>Female</option>
-  </select>
+          <select name="gender">
+            <option value="">Gender (optional)</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
 
-  <input type="hidden" name="_subject" value="New Join The Army signup">
-  <input type="hidden" name="_redirect" value="https://gehab.github.io/jointhearmy/thankyou.html">
-  <button type="submit" class="btn btn-primary">Join the Waitlist</button>
-  <p class="fine">
-  By submitting this form, you consent to us collecting and processing your name and email address for the purpose of sending you updates and early access information. You can unsubscribe at any time.
-</p>
-</form>
+          <input type="hidden" name="_subject" value="New Join The Army signup">
 
-        <p class="fine">
-          By joining, you’ll receive launch updates and early access information.
-        </p>
+          <button id="submit-button" type="submit" class="btn btn-primary">Join the Waitlist</button>
+
+          <div id="form-error" class="status-message"></div>
+
+          <p class="fine">
+            By submitting this form, you consent to us collecting and processing the personal data you provide for the purpose of sending you updates and early access information. You can unsubscribe at any time.
+          </p>
+        </form>
       </div>
     </div>
   </section>
@@ -851,6 +857,58 @@
       JOIN THE ARMY · Discipline · Structure · Identity
     </div>
   </footer>
+
+  <script>
+    const form = document.getElementById("waitlist-form");
+    const submitButton = document.getElementById("submit-button");
+    const errorBox = document.getElementById("form-error");
+
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      errorBox.className = "status-message";
+      errorBox.style.display = "none";
+      errorBox.textContent = "";
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Submitting...";
+
+      const data = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: data,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (response.ok) {
+          window.location.href = "https://gehab.github.io/jointhearmy/thankyou.html";
+        } else {
+          const result = await response.json().catch(() => null);
+          let message = "Something went wrong. Please try again.";
+
+          if (result && result.errors && result.errors.length > 0) {
+            message = result.errors.map(error => error.message).join(" ");
+          }
+
+          errorBox.textContent = message;
+          errorBox.className = "status-message error";
+          errorBox.style.display = "block";
+          submitButton.disabled = false;
+          submitButton.textContent = "Join the Waitlist";
+        }
+      } catch (error) {
+        errorBox.textContent = "Something went wrong. Please try again.";
+        errorBox.className = "status-message error";
+        errorBox.style.display = "block";
+        submitButton.disabled = false;
+        submitButton.textContent = "Join the Waitlist";
+      }
+    });
+  </script>
 
 </body>
 </html>
