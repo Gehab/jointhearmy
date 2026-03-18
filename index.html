@@ -694,13 +694,71 @@
         <div class="price">Free</div>
         <div class="muted">Founding waitlist access</div>
 
-        <form action="https://formspree.io/f/xqeywnpe" method="POST">
-          <input type="text" name="name" placeholder="Your name" required>
-          <input type="email" name="email" placeholder="Your email" required>
-          <input type="hidden" name="_subject" value="New Join The Army signup">
-          <input type="hidden" name="_redirect" value="https://gehab.github.io/jointhearmy/thankyou.html">
-          <button type="submit" class="btn btn-primary">Join the Waitlist</button>
-        </form>
+<form action="https://formspree.io/f/xqeywnpe" method="POST">
+  <input type="text" name="name" placeholder="Your name" required>
+  <input type="email" name="email" placeholder="Your email" required>
+
+  <!-- 🌍 COUNTRY (REQUIRED) -->
+  <select name="country" required
+    style="width:100%; padding:15px; border-radius:16px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.04); color:white; font-size:16px;">
+    <option value="">Select your country</option>
+    <option>Albania</option>
+    <option>Argentina</option>
+    <option>Australia</option>
+    <option>Austria</option>
+    <option>Belgium</option>
+    <option>Brazil</option>
+    <option>Canada</option>
+    <option>Chile</option>
+    <option>China</option>
+    <option>Croatia</option>
+    <option>Denmark</option>
+    <option>Egypt</option>
+    <option>Finland</option>
+    <option>France</option>
+    <option>Germany</option>
+    <option>Hungary</option>
+    <option>Italy</option>
+    <option>Israel</option>
+    <option>India</option>
+    <option>Iraq</option>
+    <option>Mexico</option>
+    <option>Netherlands</option>
+    <option>Nigeria</option>
+    <option>Norway</option>
+    <option>Oman</option>
+    <option>Pakistan</option>
+    <option>Philipines</option>
+    <option>Poland</option>
+    <option>Romania</option>
+    <option>Russia</option>
+    <option>Serbia</option>
+    <option>Slovakia</option>
+    <option>Slovenia</option>
+    <option>South Africa</option>
+    <option>South Korea</option>
+    <option>Spain</option>
+    <option>Sweden</option>
+    <option>Thailand</option>
+    <option>Ukraine</option>
+    <option>United Arab Emirates</option>
+    <option>United Kingdom</option>
+    <option>United States</option>
+    <option>Other</option>
+  </select>
+
+  <!-- 👤 GENDER (OPTIONAL) -->
+  <select name="gender"
+    style="width:100%; padding:15px; border-radius:16px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.04); color:white; font-size:16px;">
+    <option value="">Gender (optional)</option>
+    <option>Male</option>
+    <option>Female</option>
+  </select>
+
+  <input type="hidden" name="_subject" value="New Join The Army signup">
+  <input type="hidden" name="_redirect" value="https://gehab.github.io/jointhearmy/thankyou.html">
+  <button type="submit" class="btn btn-primary">Join the Waitlist</button>
+</form>
 
         <p class="fine">
           By joining, you’ll receive launch updates and early access information.
