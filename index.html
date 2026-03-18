@@ -465,6 +465,38 @@
       .hero-left,.panel,.card,.quote,.final-cta{padding:22px}
       .topbar-inner{padding:14px 0}
     }
+    
+    .form-select{
+  width:100%;
+  padding:15px 16px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.10);
+  background:rgba(255,255,255,0.04);
+  color:#ffffff;
+  font-size:16px;
+  outline:none;
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #d8b36a 50%),
+    linear-gradient(135deg, #d8b36a 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(50% - 3px),
+    calc(100% - 14px) calc(50% - 3px);
+  background-size:6px 6px, 6px 6px;
+  background-repeat:no-repeat;
+}
+
+.form-select:focus{
+  border-color:rgba(216,179,106,0.55);
+  box-shadow:0 0 0 3px rgba(216,179,106,0.12);
+}
+
+.form-select option{
+  background:#0f1d2b;
+  color:#ffffff;
+}
   </style>
 </head>
 <body>
@@ -699,7 +731,7 @@
   <input type="email" name="email" placeholder="Your email" required>
 
   <!-- 🌍 COUNTRY (REQUIRED) -->
-  <select name="country" required
+   <select name="country" required class="form-select">
     style="width:100%; padding:15px; border-radius:16px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.04); color:white; font-size:16px;">
     <option value="">Select your country</option>
     <option>Albania</option>
@@ -748,7 +780,7 @@
   </select>
 
   <!-- 👤 GENDER (OPTIONAL) -->
-  <select name="gender"
+  <select name="gender" class="form-select">
     style="width:100%; padding:15px; border-radius:16px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.04); color:white; font-size:16px;">
     <option value="">Gender (optional)</option>
     <option>Male</option>
