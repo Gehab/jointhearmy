@@ -1,58 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>You're In</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | JoinTheArmy.com</title>
+  <meta name="description" content="Thank you for joining the JoinTheArmy.com waitlist." />
+  <meta name="theme-color" content="#0c1118" />
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0b1118;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-}
+  <style>
+    :root {
+      --bg: #0c1118;
+      --text: #f4f7fb;
+      --muted: #b8c2d1;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #c8a96b;
+      --accent-hover: #d8b67b;
+      --success: #81d39b;
+      --card: rgba(255, 255, 255, 0.06);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 26px;
+      --max: 860px;
+    }
 
-.container {
-  max-width: 600px;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-h1 {
-  font-size: 48px;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(200, 169, 107, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent 20%),
+        linear-gradient(180deg, #0b1017 0%, #0c1118 100%);
+      color: var(--text);
+      padding: 28px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-p {
-  color: #aaa;
-  font-size: 18px;
-}
+    .wrap {
+      width: min(100%, var(--max));
+    }
 
-a {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: white;
-  color: black;
-  text-decoration: none;
-}
-</style>
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 42px 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(129, 211, 155, 0.08);
+      border: 1px solid rgba(129, 211, 155, 0.25);
+      color: var(--success);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      margin: 0 0 26px;
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .info-box {
+      margin: 0 0 24px;
+      padding: 20px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .info-box h2 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .info-box ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin-bottom: 28px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0c1118;
+      box-shadow: 0 12px 30px rgba(200, 169, 107, 0.24);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 30px 22px;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <div class="card">
+      <div class="badge">Waitlist confirmed</div>
 
-<div class="container">
-  <h1>You’re in.</h1>
-  <p>
-    You are now part of the founding group.<br><br>
-    More instructions will follow soon.
-  </p>
+      <h1>You’re in.</h1>
 
-  <a href="/">Back to site</a>
-</div>
+      <p class="lead">
+        Thank you for joining the JoinTheArmy.com waitlist.
+        You’re now among the early subscribers who will hear first as the project develops.
+      </p>
 
+      <div class="info-box">
+        <h2>What happens next</h2>
+        <ul>
+          <li>You may receive early updates, selected previews, and launch news</li>
+          <li>Future communication will stay focused on the project and relevant early-access information</li>
+          <li>JoinTheArmy.com is an English-language concept around discipline, structure, and self-leadership</li>
+          <li>This is an independent platform and is not affiliated with any military or government body</li>
+        </ul>
+      </div>
+
+      <p class="note">
+        We’re building something serious, modern, and intentional — for people who want stronger standards,
+        clearer routines, and more command over their own lives.
+      </p>
+
+      <div class="actions">
+        <a href="index.html" class="btn-primary">Return to homepage</a>
+        <a href="index.html#waitlist" class="btn-secondary">Share the project</a>
+      </div>
+
+      <div class="footer-note">
+        JoinTheArmy.com is a personal development concept focused on discipline, identity, and self-leadership.
+      </div>
+    </div>
+  </div>
 </body>
 </html>
