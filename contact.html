@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | JoinTheArmy.com</title>
+  <meta name="description" content="Contact JoinTheArmy.com" />
+  <meta name="theme-color" content="#0c1118" />
+
+  <style>
+    :root {
+      --bg: #0c1118;
+      --text: #f4f7fb;
+      --muted: #b8c2d1;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #c8a96b;
+      --accent-hover: #d8b67b;
+      --card: rgba(255, 255, 255, 0.06);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 26px;
+      --max: 900px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(200, 169, 107, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent 20%),
+        linear-gradient(180deg, #0b1017 0%, #0c1118 100%);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 28px;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+
+    .wrap {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+
+    .back-link:hover {
+      background: rgba(255,255,255,0.07);
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 40px 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 720px;
+    }
+
+    .contact-box {
+      padding: 20px 22px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      margin-bottom: 24px;
+    }
+
+    .contact-box h2 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-box p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .email-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .sections h2 {
+      margin-top: 28px;
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .sections p, .sections li {
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 22px;
+    }
+
+    .note {
+      margin-top: 26px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+    }
+
+    .footer-links {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 16px; }
+      .card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">JoinTheArmy.com</div>
+      <a class="back-link" href="index.html">Back to homepage</a>
+    </div>
+
+    <div class="card">
+      <div class="eyebrow">Contact</div>
+      <h1>Contact</h1>
+      <p class="lead">
+        For general questions, partnerships, media, or other inquiries related to JoinTheArmy.com, please get in touch by email.
+      </p>
+
+      <div class="contact-box">
+        <h2>Email</h2>
+        <p>The primary contact address for this website is:</p>
+        <a class="email-link" href="mailto:info@jointhearmy.com">info@jointhearmy.com</a>
+      </div>
+
+      <div class="sections">
+        <h2>What you can contact us about</h2>
+        <ul>
+          <li>general project inquiries</li>
+          <li>brand, media, or collaboration questions</li>
+          <li>privacy-related requests</li>
+          <li>waitlist or communication issues</li>
+          <li>future partnership or business discussions</li>
+        </ul>
+
+        <h2>Please note</h2>
+        <p>
+          JoinTheArmy.com is an independent personal development concept focused on discipline, structure, identity, and self-leadership.
+          It is not a military, government, or recruitment service.
+        </p>
+
+        <h2>Response times</h2>
+        <p>
+          We aim to respond within a reasonable time, but response times may vary depending on the nature and volume of inquiries.
+        </p>
+      </div>
+
+      <div class="note">
+        If your inquiry concerns privacy, personal data, or removal from communications, please mention that clearly in your email so it can be handled appropriately.
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
